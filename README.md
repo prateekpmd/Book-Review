@@ -41,7 +41,23 @@ npm install
 ### 3. Configure Environment Variables
 ```bash
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/bookreview
+MONGODB_URI=Your MongoDb Uri
 JWT_SECRET=your_jwt_secret_key 
 ```
+
+## 💻 How to Run Locally
+
+### 1. Start MongoDB
+Make sure MongoDB is running on your machine:
+
+### 1. Start the Server
+Development Mode:
+```bash
+npm run dev
+```
+Server runs at: http://localhost:5000
+
+
+
+
 
