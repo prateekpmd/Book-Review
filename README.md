@@ -28,22 +28,20 @@ A simple RESTful API for managing books and user-submitted reviews, built using 
 ## ⚙️ Project Setup Instructions
 
 ### 1. Clone the Repository
-
-
 ```bash
-git clone https://github.com/prateekpmd/Book-Review.git
+git clone https://github.com/prateekpmd/Book-Review.git 
+```
 
 
-2. Install Dependencies
-
+### 2. Install Dependencies
 ```bash
 npm install
+```
 
-
-3. Configure Environment Variables
-
+### 3. Configure Environment Variables
 ```bash
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/bookreview
 JWT_SECRET=your_jwt_secret_key 
+```
 
