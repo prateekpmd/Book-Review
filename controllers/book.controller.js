@@ -1,5 +1,5 @@
-const Book = require('../models/book.model');
-const Review = require('../models/review.model');
+const Book = require("../models/book.model");
+const Review = require("../models/review.model");
 
 const createBook = async (req, res) => {
   try {
@@ -7,15 +7,15 @@ const createBook = async (req, res) => {
     const saved = await book.save();
     res.status(201).json(saved);
   } catch (err) {
-    res.status(400).json({ message: 'Error creating book' });
+    res.status(400).json({ message: "Error creating book" });
   }
 };
 
 const getAllBooks = async (req, res) => {
   const { author, genre, page = 1, limit = 10 } = req.query;
   const filter = {};
-  if (author) filter.author = new RegExp(author, 'i');
-  if (genre) filter.genre = new RegExp(genre, 'i');
+  if (author) filter.author = new RegExp(author, "i");
+  if (genre) filter.genre = new RegExp(genre, "i");
 
   try {
     const books = await Book.find(filter)
@@ -23,14 +23,14 @@ const getAllBooks = async (req, res) => {
       .limit(Number(limit));
     res.json(books);
   } catch (err) {
-    res.status(500).json({ message: 'Error fetching books' });
+    res.status(500).json({ message: "Error fetching books" });
   }
 };
 
 const getBookById = async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
-    if (!book) return res.status(404).json({ message: 'Book not found' });
+    if (!book) return res.status(404).json({ message: "Book not found" });
 
     const reviews = await Review.find({ book: book._id });
     const averageRating =
@@ -38,7 +38,7 @@ const getBookById = async (req, res) => {
 
     res.json({ book, averageRating, reviews });
   } catch (err) {
-    res.status(500).json({ message: 'Error fetching book' });
+    res.status(500).json({ message: "Error fetching book" });
   }
 };
 
@@ -46,11 +46,11 @@ const searchBooks = async (req, res) => {
   const { q } = req.query;
   try {
     const books = await Book.find({
-      $or: [{ title: new RegExp(q, 'i') }, { author: new RegExp(q, 'i') }],
+      $or: [{ title: new RegExp(q, "i") }, { author: new RegExp(q, "i") }],
     });
     res.json(books);
   } catch (err) {
-    res.status(500).json({ message: 'Search error' });
+    res.status(500).json({ message: "Search error" });
   }
 };
 

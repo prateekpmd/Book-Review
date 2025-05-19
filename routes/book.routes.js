@@ -10,8 +10,8 @@ const {
 const authMiddleware = require('../middleware/auth.middleware');
 
 router.post('/', authMiddleware, createBook);
-router.get('/', getAllBooks);
+router.get('/get', getAllBooks);
 router.get('/search', searchBooks);
-router.get('/:id', getBookById);
+router.get('/single/:id', getBookById);
 
 module.exports = router;
