@@ -111,12 +111,16 @@ Method: GET
 
 URL: http://localhost:3000/api/books?author=Orwell&genre=Dystopian&page=1&limit=5
 
-### 3.1 Get Book Details by ID (includes average rating & reviews)
+### 2.2 Get Book Details by ID (includes average rating & reviews)
 Method: GET
 
 URL: http://localhost:3000/api/books/<BOOK_ID>
 
-### 4.1 4. Search Books by Title or Author
+### 2.3 Search Books by Title or Author
 Method: GET
 
 URL: http://localhost:3000/api/books/search?q=1984
+
+
+## 2. Review Module
+### 1.1 Create a Review

@@ -16,7 +16,7 @@ router.post('/', authMiddleware, createBook);
 router.get('/get', getAllBooks);
 
 //To search for a Book
-router.get('/search', searchBooks);
+// router.get('/search', searchBooks);
 
 //Get Single Book
 router.get('/single/:id', getBookById);

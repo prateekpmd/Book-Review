@@ -52,22 +52,22 @@ const getBookById = async (req, res) => {
   }
 };
 
-const searchBooks = async (req, res) => {
-  const { q } = req.query;
-  try {
-    // Search books where title or author matches the query (case-insensitive)
-    const books = await Book.find({
-      $or: [{ title: new RegExp(q, "i") }, { author: new RegExp(q, "i") }],
-    });
-    res.json(books);
-  } catch (err) {
-    res.status(500).json({ message: "Search error" });
-  }
-};
+// const searchBooks = async (req, res) => {
+//   const { q } = req.query;
+//   try {
+//     // Search books where title or author matches the query (case-insensitive)
+//     const books = await Book.find({
+//       $or: [{ title: new RegExp(q, "i") }, { author: new RegExp(q, "i") }],
+//     });
+//     res.json(books);
+//   } catch (err) {
+//     res.status(500).json({ message: "Search error" });
+//   }
+// };
 
 module.exports = {
   createBook,
   getAllBooks,
   getBookById,
-  searchBooks,
+//   searchBooks,
 };
