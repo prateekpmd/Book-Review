@@ -29,17 +29,18 @@ A simple RESTful API for managing books and user-submitted reviews, built using 
 
 ### 1. Clone the Repository
 
+
 ```bash
 git clone https://github.com/prateekpmd/Book-Review.git
 
 
-### 2. Install Dependencies
+2. Install Dependencies
 
 ```bash
 npm install
 
 
-### 3. Configure Environment Variables
+3. Configure Environment Variables
 
 ```bash
 PORT=5000
