@@ -172,3 +172,29 @@ URL: http://localhost:3000/api/reviews/<REVIEW_ID>
 Headers:
 
 Authorization: Bearer <YOUR_JWT_TOKEN>
+
+## 🎯 Design Decisions & Assumptions Made
+Authentication:
+JWT-based authentication is used for stateless and scalable user session management. Each protected route requires a valid token in the Authorization header.
+
+Authorization:
+Only the user who created a review can update or delete it. Admin roles are not implemented since it's a user-focused review system.
+
+Modular Structure:
+Code is organized into controllers, models, and routes to ensure clean separation of concerns and easier maintenance.
+
+Error Handling:
+Simple and consistent error responses (with proper HTTP status codes) are returned to the client for debugging.
+
+Validation:
+Input validation is handled through middleware to ensure incoming data is safe and complete before hitting database logic.
+
+Environment Config:
+Sensitive credentials like database URI and JWT secret are stored in a .env file for security and easy environment switching.
+
+Database Assumption:
+MongoDB is assumed to be running locally or in the cloud (e.g., MongoDB Atlas), and accessible via the configured connection string.
+
+Review Constraint:
+Each user can submit only one review per book to prevent duplicate reviews and ensure fairness.
+
