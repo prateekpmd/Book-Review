@@ -198,3 +198,31 @@ MongoDB is assumed to be running locally or in the cloud (e.g., MongoDB Atlas), 
 Review Constraint:
 Each user can submit only one review per book to prevent duplicate reviews and ensure fairness.
 
+## 🗂️ Database Schema
+### 👤 User
+| Field      | Type   | Description          |
+| ---------- | ------ | -------------------- |
+| `email`    | String | Unique user email    |
+| `password` | String | Hashed user password |
+
+
+### 📚 Book
+| Field           | Type     | Description                       |
+| --------------- | -------- | --------------------------------- |
+| `title`         | String   | Book title                        |
+| `author`        | String   | Book author                       |
+| `genre`         | String   | Book genre/category               |
+| `publishedYear` | Number   | Year the book was published       |
+| `createdBy`     | ObjectId | Refers to the user who created it |
+
+
+### Review
+| Field        | Type     | Description                                        |
+| ------------ | -------- | -------------------------------------------------- |
+| `user`       | ObjectId | Reference to the reviewer (User)                   |
+| `book`       | ObjectId | Reference to the reviewed book                     |
+| `rating`     | Number   | Rating from 1 to 5                                 |
+| `comment`    | String   | User's review comment                              |
+| `timestamps` | Date     | Automatically includes `createdAt` and `updatedAt` |
+
+
