@@ -58,9 +58,9 @@ npm run dev
 Server runs at: http://localhost:5000
 
 
-## 📋 Example API Requests (Postman)
-
-### 1. 1. User Signup
+# 📋 Example API Requests (Postman)
+## Auth Module
+### 1.1 User Signup
 Method: POST
 
 URL: http://localhost:5000/api/auth/signup
@@ -72,7 +72,7 @@ URL: http://localhost:5000/api/auth/signup
 }
 ```
 
-### 1. 1. User Login
+### 1.2 User Login
 Method: POST
 
 URL: http://localhost:5000/api/auth/login
