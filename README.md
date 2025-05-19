@@ -119,8 +119,56 @@ URL: http://localhost:3000/api/books/<BOOK_ID>
 ### 2.3 Search Books by Title or Author
 Method: GET
 
-URL: http://localhost:3000/api/books/search?q=1984
+URL: http://localhost:5000/api/search?query=Asap
 
 
-## 2. Review Module
-### 1.1 Create a Review
+## 3. 📝 Review Module — Example API Requests (Postman)
+### 3.1 Create a Review for a Book
+Method: POST
+
+URL: http://localhost:3000/api/books/<BOOK_ID>/reviews
+
+Headers:
+
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+Content-Type: application/json
+
+Body: (raw JSON)
+```bash
+{
+  "rating": 5,
+  "comment": "Amazing book! A must-read."
+}
+
+```
+
+### 3.2 Update Your Review
+Method: PUT
+
+URL: http://localhost:3000/api/reviews/<REVIEW_ID>
+
+Headers:
+
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+Content-Type: application/json
+
+Body: (raw JSON)
+
+```bash
+{
+  "rating": 4,
+  "comment": "Updated review: still great but noticed some flaws."
+}
+
+```
+
+### 3.3 Delete Your Review
+Method: DELETE
+
+URL: http://localhost:3000/api/reviews/<REVIEW_ID>
+
+Headers:
+
+Authorization: Bearer <YOUR_JWT_TOKEN>
