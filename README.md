@@ -59,7 +59,7 @@ Server runs at: http://localhost:5000
 
 
 # 📋 Example API Requests (Postman)
-## Auth Module
+## 1. Auth Module
 ### 1.1 User Signup
 Method: POST
 
@@ -83,5 +83,40 @@ URL: http://localhost:5000/api/auth/login
   "password": "mypassword"
 }
 ```
+## 2. Book Module
+### 1.1 Create a Book
+Method: POST
 
+URL: http://localhost:5000/api/books
 
+Headers:
+
+Authorization: Bearer <YOUR_JWT_TOKEN>
+
+Content-Type: application/json
+
+Body: (raw JSON)
+```bash
+{
+  "title": "Driver 2",
+  "author": "Asap Rocky",
+  "genre": "Animation",
+  "publishedYear": 2015
+}
+
+```
+
+### 2.1 Get All Books (with optional filters & pagination)
+Method: GET
+
+URL: http://localhost:3000/api/books?author=Orwell&genre=Dystopian&page=1&limit=5
+
+### 3.1 Get Book Details by ID (includes average rating & reviews)
+Method: GET
+
+URL: http://localhost:3000/api/books/<BOOK_ID>
+
+### 4.1 4. Search Books by Title or Author
+Method: GET
+
+URL: http://localhost:3000/api/books/search?q=1984
