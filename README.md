@@ -226,3 +226,14 @@ Each user can submit only one review per book to prevent duplicate reviews and e
 | `timestamps` | Date     | Automatically includes `createdAt` and `updatedAt` |
 
 
+## 🔗 Relationships
+A User can create many Books
+
+A User can post many Reviews
+
+A Book can have multiple Reviews
+
+A Review belongs to one User and one Book
+
+
+![ER Diagram](./images/ER.png)
