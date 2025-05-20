@@ -236,5 +236,6 @@ A Book can have multiple Reviews
 A Review belongs to one User and one Book
 
 
+## 🗂️ ER Diagram
 ![ER Diagram](./images/ER.png)
 
