@@ -237,3 +237,4 @@ A Review belongs to one User and one Book
 
 
 ![ER Diagram](./images/ER.png)
+
